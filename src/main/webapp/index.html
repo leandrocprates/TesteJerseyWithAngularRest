@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-sanitize.js"></script>
+
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+
+        <script src="resources/cadastroController.js"></script>
+        
+    </head>
+    <body ng-app="mainApp" ng-controller="cadastroController">
+        
+
+        <h1>Hello World!</h1>
+        
+        Nome : <input type="text" id="nome"  ng-model="candidato.nome"   /><br/>
+        
+        {{candidato.nome}}<br/>
+        
+        
+        Idade: <input type="text" id="idade"  ng-model="candidato.idade"/><br/>
+        {{candidato.idade}}<br/>
+        
+        Data cadastro : <input type="text" id="datacadastro"  ng-model="candidato.data_cad"   /><br/>
+        
+        {{candidato.data_cad}}<br/>
+        
+        
+        Endereco : <input type="text" id="endereco"  ng-model="candidato.dados_candidato.endereco"   /><br/>
+        
+        {{candidato.dados_candidato.endereco}}<br/>
+        
+        
+        Pretensao Salarial  : <input type="text" id="pretensao"  ng-model="candidato.dados_candidato.pretensao_salarial"   /><br/><br/>
+        
+        telefone fixo  : <input type="text" id="fixo"  ng-model="candidato.dados_candidato.telefone_fixo"   /><br/><br/>
+        
+        telefone celular  : <input type="text" id="celular"  ng-model="candidato.dados_candidato.telefone_celular"   /><br/><br/>
+        
+        <input type="button" value="cadastrar" ng-click="inserircandidato()" >
+        
+        
+
+        <br/><br/>    
+        
+    <div class="panel panel-primary">
+        <div class="panel-heading">Lista Usuarios Cadastrados</div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Data Cadastro</th>
+                    <th>Endereco</th>
+                    <th>Pretensao Salarial</th>
+                    <th>Telefone Fixo</th>
+                    <th>Celular</th>
+                </tr>
+            </thead>
+                
+            <tbody>
+                <tr ng-repeat="c in listaCandidatos">
+                    <td>{{c.id}}</td>
+                    <td>{{c.nome}}</td>
+                    <td>{{c.idade}}</td>
+                    <td>{{c.data_cad}}</td>
+                    <td>{{c.dados_candidato.endereco}}</td>
+                    <td>{{c.dados_candidato.pretensao_salarial}}</td>
+                    <td>{{c.dados_candidato.telefone_fixo}}</td>
+                    <td>{{c.dados_candidato.telefone_celular}}</td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+  
+    </div>        
+        
+        
+    </body>
+</html>
